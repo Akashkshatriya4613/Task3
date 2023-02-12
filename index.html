@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+      function showResult() {
+        var totalQuestions = 2;
+        var correctAnswers = 0;
+
+        var question1 = document.querySelector('input[name="question1"]:checked').value;
+        if (question1 === "Hyper Text Markup Language") {
+          correctAnswers++;
+        }
+
+        var question2 = document.querySelector('input[name="question2"]:checked').value;
+        if (question2 === "World Wide Web Consortium") {
+          correctAnswers++;
+        }
+
+        document.querySelector("#result").innerHTML = "You got " + correctAnswers + " out of " + totalQuestions + " questions correct.";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quiz Website</h1>
+      <form action="#">
+        <p>Question 1: What does HTML stand for?</p>
+        <input type="radio" name="question1" value="Home Tool Markup Language">Home Tool Markup Language<br>
+        <input type="radio" name="question1" value="Hyperlink Text Markup Language">Hyperlink Text Markup Language<br>
+        <input type="radio" name="question1" value="Hyper Text Markup Language">Hyper Text Markup Language<br>
+        <p>Question 2: Who is making the Web standards?</p>
+        <input type="radio" name="question2" value="Microsoft">Microsoft<br>
+        <input type="radio" name="question2" value="World Wide Web Consortium">World Wide Web Consortium<br>
+        <input type="radio" name="question2" value="Google">Google<br>
+        <button type="button" onclick="showResult()">Submit</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
